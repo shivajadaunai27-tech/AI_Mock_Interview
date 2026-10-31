@@ -1,4 +1,3 @@
-
 import os
 from dotenv import load_dotenv
 from groq import Groq
@@ -14,9 +13,7 @@ MODEL = "openai/gpt-oss-20b"
 
 def ask_ai(prompt):
     if client is None:
-        raise ValueError(
-            "API key nahi mili. Apni .env file check karo."
-        )
+        raise ValueError("GROQ_API_KEY set nahi hai.")
 
     response = client.chat.completions.create(
         model=MODEL,
